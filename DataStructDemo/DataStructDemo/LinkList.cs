@@ -7,39 +7,33 @@ namespace DataStructDemo
 {
     class LinkList
     {
-        internal Node head;
-
-        internal void insertData(int data)
-        {
+         internal Node head;
+         internal void Add(int data)
+         {
             Node newnode = new Node(data);
-            if (head == null)
+            if (this.head == null)
             {
-                head = newnode;
+                this.head = newnode;
             }
             else
             {
-                Node temp = head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = newnode;
+                newnode.next = head;
+                this.head = newnode;
             }
-            Console.WriteLine("{0} - Added in linklist",newnode.data);
-        }
+            Console.WriteLine("{0} this value is added", newnode.data);
+         }
 
-        internal void Display() 
+        internal void Display()
         {
-            Node temp = head;
+            Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("LinkedList is Empty");
+                Console.WriteLine("Empty Linked list");
                 return;
             }
-
-            while (temp != null) 
+            while (temp != null)
             {
-                Console.WriteLine(temp.data + " ");
+                Console.Write(temp.data + " ");
                 temp = temp.next;
             }
         }
