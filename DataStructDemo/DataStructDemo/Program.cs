@@ -13,6 +13,9 @@ namespace DataStructDemo
             Console.WriteLine("\nInsert 30 between 56 and 70");
             linkList.insertBetweenPosition(2,30);
             linkList.Display();
+            Console.WriteLine("\nRemove First Node");
+            linkList.removeFirstNode();
+            linkList.Display();
         }
     }
 }

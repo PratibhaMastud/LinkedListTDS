@@ -70,7 +70,21 @@ namespace DataStructDemo
                     head = head.next;
                 }
             }
-            Console.WriteLine("\n Head is value" + head.data );
+            Console.WriteLine("\nHead is value  " + head.data );
+        }
+
+        /// <summary>
+        /// Remove first element from linkedlist
+        /// </summary>
+        /// <returns></returns>
+        internal Node removeFirstNode()
+        {
+            if (head == null)
+            {
+                return null;
+            }
+            this.head = this.head.next;
+            return this.head;
         }
 
     }
