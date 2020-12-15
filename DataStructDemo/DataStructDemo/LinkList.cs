@@ -37,5 +37,41 @@ namespace DataStructDemo
                 temp = temp.next;
             }
         }
+
+        /// <summary>
+        /// Insert 30 between 56 and 70
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="data"></param>
+        internal void insertBetweenPosition(int position, int data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid Position");
+            }
+
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.head.next;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+                }
+            }
+            Console.WriteLine("\n Head is value" + head.data );
+        }
+
     }
 }
