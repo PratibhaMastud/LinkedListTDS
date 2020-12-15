@@ -70,7 +70,7 @@ namespace DataStructDemo
                     head = head.next;
                 }
             }
-            Console.WriteLine("\nHead is value  " + head.data );
+            Console.WriteLine("\nHead is value" + head.data );
         }
 
         /// <summary>
@@ -85,6 +85,26 @@ namespace DataStructDemo
             }
             this.head = this.head.next;
             return this.head;
+        }
+
+        internal Node removeLastNode()
+        {
+            Node temp = head;
+            Node prev = temp;
+            if (head == null)
+            {
+                return head;
+            }
+            else
+            {
+                if (temp.next.next == null) 
+                {
+                    temp.next = null;
+                }
+                temp = temp.next;
+                return this.head;
+
+            }
         }
 
     }

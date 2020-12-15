@@ -16,6 +16,10 @@ namespace DataStructDemo
             Console.WriteLine("\nRemove First Node");
             linkList.removeFirstNode();
             linkList.Display();
+            Console.WriteLine("\nRemove Last Node");
+            linkList.removeLastNode();
+            linkList.Display();
+
         }
     }
 }
