@@ -14,6 +14,9 @@ namespace DataStructDemo
             Console.WriteLine("\nAdd after 30 : 40");
             linkList.AddAfterAtPerticulatPosition(30);
             linkList.Display();
+            int position = linkList.deletePerticulatElement(30);
+            Console.WriteLine("\nthe size of linkedlist is {0} ",position);
+            linkList.Display();
         }
     }
 }
