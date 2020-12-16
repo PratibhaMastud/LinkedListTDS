@@ -5,20 +5,25 @@ using System.Text;
 
 namespace DataStructDemo
 {
-    class LinkList
+    public class LinkList
     {
          internal Node head;
-         internal void Add(int data)
+         public void Add(int data)
          {
             Node newnode = new Node(data);
+            Node temp = head;
             if (this.head == null)
             {
                 this.head = newnode;
             }
             else
             {
-                newnode.next = head;
-                this.head = newnode;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = newnode;
+               
             }
             Console.WriteLine("{0} this value is added", newnode.data);
          }
@@ -86,7 +91,9 @@ namespace DataStructDemo
             this.head = this.head.next;
             return this.head;
         }
-
+        /// <summary>
+        /// Remove Last Element or Node
+        /// </summary>
         internal Node removeLastNode()
         {
             Node temp = head;
@@ -106,6 +113,28 @@ namespace DataStructDemo
 
             }
         }
-
+        /// <summary>
+        /// Search Node from Linkedlist
+        /// </summary>
+        /// <param name="value"></param>
+        public int findNodeWithValue(int value)
+        {
+            bool flag = true;
+            int count = 1;
+            Node temp = head;
+            while (flag)
+            {
+                if (temp.data == value)
+                {
+                    flag = false;
+                }
+                else
+                {
+                    temp = temp.next;
+                    count++;
+                }
+            }
+            return count;
+        }
     }
 }
