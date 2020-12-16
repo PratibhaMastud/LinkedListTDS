@@ -7,9 +7,9 @@ namespace DataStructDemo
 {
     public class LinkList
     {
-         internal Node head;
-         public void Add(int data)
-         {
+        internal Node head;
+        public void Add(int data)
+        {
             Node newnode = new Node(data);
             Node temp = head;
             if (this.head == null)
@@ -23,10 +23,10 @@ namespace DataStructDemo
                     temp = temp.next;
                 }
                 temp.next = newnode;
-               
+
             }
             Console.WriteLine("{0} this value is added", newnode.data);
-         }
+        }
 
         internal void Display()
         {
@@ -75,7 +75,7 @@ namespace DataStructDemo
                     head = head.next;
                 }
             }
-            Console.WriteLine("\nHead is value" + head.data );
+            Console.WriteLine("\nHead is value" + head.data);
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace DataStructDemo
             }
             else
             {
-                if (temp.next.next == null) 
+                if (temp.next.next == null)
                 {
                     temp.next = null;
                 }
@@ -136,5 +136,23 @@ namespace DataStructDemo
             }
             return count;
         }
+
+        internal void AddAfterAtPerticulatPosition(int data)
+        {
+            Node newnode = new Node(40);
+            Node temp = head;
+
+            while (temp.next != null)
+            {
+                if (temp.data == data)
+                {
+                    newnode.next = temp.next;
+                    temp.next = newnode;
+                }
+                temp = temp.next;
+            }
+            Console.WriteLine("Given LinkedList = " + head.data);
+        }
     }
 }
+
